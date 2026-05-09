@@ -31,29 +31,41 @@ func Print(head *Node) {
 	temp := head
 	for temp != nil {
 		fmt.Println(temp.data)
-		temp=temp.Next
+		temp = temp.Next
 	}
 }
 
-func Middle(head *Node){
-	slow:=head
-	fast:=head
+func Middle(head *Node) {
+	slow := head
+	fast := head
 
-	for fast!=nil&&fast.Next!=nil{
-		slow=slow.Next
-		fast=fast.Next.Next
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
 	}
-	fmt.Println("Middle :",slow.data)
+	fmt.Println("Middle :", slow.data)
 }
 
-func ReverseLL(head *Node)*Node{
+func ReverseLL(head *Node) *Node {
 	var prev *Node
-	current:=head
-	for current!=nil{
-		next:=current.Next
-		current.Next=prev
-		prev=current
-		current=next
+	current := head
+	for current != nil {
+		next := current.Next
+		current.Next = prev
+		prev = current
+		current = next
 	}
 	return prev
+}
+
+func RemoveDuplicates(head *Node){
+	current:=head
+	for current!=nil&&current.Next!=nil{
+		if current.data==current.Next.data{
+			current.Next=current.Next.Next
+		}else{
+			current=current.Next
+		}
+	}
+
 }
