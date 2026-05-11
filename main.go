@@ -20,7 +20,7 @@ func main() {
 	// fmt.Println(result5)
 
 	// 5
-	Mix()
+	// Mix()
 
 	// 6
 	// head:=Linked()
@@ -39,17 +39,23 @@ func main() {
 	// 	}
 	// }
 	// array = append(array[:ind],array[ind+1:]...)
-// 	dupe:=make(map[int]bool)
-// 	res:=[]int{}
-// 	for _,v:=range array{
-// 		if !dupe[v]{
-// 			dupe[v]=true
-// 			res = append(res, v)
-// 		}
-// 	}
-// 	fmt.Println(res)
-	
-// Stack()
-// Queue()
+	// 	dupe:=make(map[int]bool)
+	// 	res:=[]int{}
+	// 	for _,v:=range array{
+	// 		if !dupe[v]{
+	// 			dupe[v]=true
+	// 			res = append(res, v)
+	// 		}
+	// 	}
+	// 	fmt.Println(res)
 
+	// 8
+	// Stack()
+	// Queue()
+
+	// 9
+	// DoubleLL()
+
+	// 10
+	Race()
 }
