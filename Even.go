@@ -15,6 +15,7 @@ func Odd(oddch chan int) {
 	}
 	close(oddch)
 }
+
 func Mix() {
 	evench := make(chan int)
 	oddch := make(chan int)
