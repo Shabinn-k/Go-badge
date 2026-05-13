@@ -8,10 +8,10 @@ func Max(arr []int) (int, int) {
 	for i := 1; i < len(arr); i++ {
 		if arr[i] > max {
 			max = arr[i]
-		}
-		if arr[i] < min {
+		}else{
 			min = arr[i]
 		}
 	}
 	return max, min
 }
+
