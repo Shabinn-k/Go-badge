@@ -12,6 +12,6 @@ func Max(arr []int) (int, int) {
 			min = arr[i]
 		}
 	}
-	return max, min
+	return min,max
 }
 

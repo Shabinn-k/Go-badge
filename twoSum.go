@@ -1,6 +1,6 @@
 package main
 
-var nums = []int{2, 7, 11, 15}
+var nums = []int{1,2, 7, 11, 15}
 var target = 9
 
 func TwoSum(nums []int, target int) []int {

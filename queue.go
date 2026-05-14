@@ -6,10 +6,10 @@ func Queue() {
 	q := []int{}
 
 	// enqueue
-	q = append(q, 10)
-	q = append(q, 20)
-	q = append(q, 30)
-	q = append(q, 40)
+	q = append(q, 100)
+	q = append(q, 200)
+	q = append(q, 300)
+	q = append(q, 400)
 	fmt.Println(q)
 
 	// dequeue

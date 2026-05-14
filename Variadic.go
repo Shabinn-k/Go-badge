@@ -1,7 +1,5 @@
 package main
 
-// import "fmt"
-
 func Variadic(a ...int)int{
     sum:=0
     for _,num:=range a{
@@ -9,7 +7,3 @@ func Variadic(a ...int)int{
     }
     return sum
 }
-
-// func main(){
-//     fmt.Println(Variadic(10,1010))
-// }
