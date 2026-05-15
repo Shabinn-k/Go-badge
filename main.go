@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // func main() {
 // 1
@@ -109,7 +112,6 @@ import "fmt"
 // 	fmt.Println(second)
 // }
 
-
 // var arr=[]int{1,2,3,4,5}
 // var targets=9
 
@@ -127,14 +129,74 @@ import "fmt"
 // 	fmt.Println("nothing")
 // }
 
+// func main(){
+// arr:=[]int{1,2,3,4,5}
+// l:=0
+// f:=len(arr)-1
+// for l<f{
+// 	arr[l],arr[f]=arr[f],arr[l]
+// 	l++
+// 	f--
+// }
+// fmt.Println(arr)
+// }
+
+// type Shape interface{
+// 	Circle() int
+// 	Rectangle() int
+// }
+
+// type Area struct{
+// 	Length int
+// 	Width int
+// }
+
+// func (a Area)Circle()int{
+// 	return 2*3*a.Length
+// }
+// func (a Area)Rectangle()int{
+// 	return a.Length*a.Width
+// }
+
+// func Trial(s Shape){
+// 	fmt.Println(s.Circle())
+// 	fmt.Println(s.Rectangle())
+// }
+
+// func  main(){
+// 	aa:=Area{
+// 		Width: 90,
+// 		Length: 10,
+// 	}
+// 	Trial(aa)
+// }
+
+// func main(){
+// 	str:="Shabin is a good boy"
+// 	m:=make(map[rune]int)
+// 	for _,v:=range str{
+// 		m[v]++
+// 	}
+// 	for a,b:=range m{
+// 		fmt.Printf("%c: %d\n",a,b)
+// 	}
+// }
+
+// func main(){
+// 	str:="Shabin is a good boy"
+// 	m:=make(map[int]string)
+// 	for i:=0;i<len(str);i++{
+// 		m[i]=string(str[i])
+// 	}
+// 	fmt.Println(m)
+// }
+
 func main(){
-arr:=[]int{1,2,3,4,5}
-l:=0
-f:=len(arr)-1
-for l<f{
-	arr[l],arr[f]=arr[f],arr[l]
-	l++
-	f--	
-}
-fmt.Println(arr)
+	str:="Shabin is a good boy "
+	a:=strings.Fields(str)
+	m:=make(map[string]int)
+	for _,v:=range a{
+		m[v]++
+	}
+	fmt.Println(m)
 }
