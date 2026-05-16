@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"strings"
+	// "fmt"
 )
 
 // func main() {
@@ -191,12 +190,80 @@ import (
 // 	fmt.Println(m)
 // }
 
+// func main(){
+// 	str:="Shabin is a good boy "
+// 	a:=strings.Fields(str)
+// 	m:=make(map[string]int)
+// 	for _,v:=range a{
+// 		m[v]++
+// 	}
+// 	fmt.Println(m)
+// }
+
+// var mu sync.Mutex
+// var bank int
+
+// func Deposits(wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	mu.Lock()
+// 	bank+=10
+// 	mu.Unlock()
+// }
+
+// func main(){
+// 	var wg sync.WaitGroup
+// 	for i:=0;i<10000;i++{
+// 		wg.Add(1)
+// 		go Deposits(&wg)
+// 	}
+// 	wg.Wait()
+// 	fmt.Println(bank)
+// }
+
+// func main(){
+// target:=9
+// arr:=[]int{2,4,5,6,8}
+// m:=make(map[int]int)
+
+// for i,v:=range arr{
+// 	get:=target-v
+// 	if ind,fou:=m[get];fou{
+// 		fmt.Println(ind,i)
+// 		return
+// 	}
+// 	m[v]=i
+// }
+// fmt.Println("Nothing")
+// }
+
+// func Odds(oddch chan int){
+// 	for i:=1;i<10;i+=2{
+// 		oddch <-i
+// 	}
+// close(oddch)
+// }
+// func Evens(evench chan int){
+// for i:=0;i<10;i+=2{
+// 	evench<-i
+// }
+// 	close(evench)
+// }
+
+// func main(){
+// 	oddch:=make(chan int)
+// 	evench:=make(chan int)
+
+// 	go Odds(oddch)
+// 	go Evens(evench)
+
+// 	for n:=range evench{
+// 		fmt.Println(n)
+// 	}
+// 	for n:=range oddch{
+// 		fmt.Println(n)
+// 	}
+// }
 func main(){
-	str:="Shabin is a good boy "
-	a:=strings.Fields(str)
-	m:=make(map[string]int)
-	for _,v:=range a{
-		m[v]++
-	}
-	fmt.Println(m)
+
+	
 }

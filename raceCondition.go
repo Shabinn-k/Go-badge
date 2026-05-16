@@ -6,13 +6,13 @@ import (
 )
 
 var Bank int
-var mu sync.Mutex
+var mus sync.Mutex
 
 func Deposit(wg *sync.WaitGroup) {
 	defer wg.Done()
-	mu.Lock()
+	mus.Lock()
 	Bank+=10
-	mu.Unlock()
+	mus.Unlock()
 }
 
 func Race() {
