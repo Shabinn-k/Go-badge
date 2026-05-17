@@ -1,8 +1,8 @@
 package main
 
-import (
-	// "fmt"
-)
+import "fmt"
+
+// "fmt"
 
 // func main() {
 // 1
@@ -264,6 +264,17 @@ import (
 // 	}
 // }
 func main(){
-
-	
+str:="madam"
+f:=0
+p:=false
+l:=len(str)-1
+for f>l{
+	if str[f]!=str[l]{
+		p=true
+		break
+	}
+	f++
+	l--
+}
+	fmt.Println(p)
 }
