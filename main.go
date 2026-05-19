@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// "sync"
+)
 
 // Print numbers from 1–100
 // func main(){
 // 	for i:=1;i<=100;i++{
 // 		fmt.Println(i)
-		
+
 // 	}
 // }
 
@@ -243,14 +246,159 @@ import "fmt"
 // }
 
 // Sort slice without built-in sort
+// func main(){
+// 	array:=[]int{2,3,4,1,5,7,8,6}
+// 	for i:=0;i<len(array);i++{
+// 		for j:=i+1;j<len(array);j++{
+// 			if array[i]>array[j]{
+// 				array[i],array[j]=array[j],array[i]
+// 			}
+// 		}
+// 	}
+// 	fmt.Println(array)
+// }
+
+// Frequency count of characters
+// func main(){
+// 	str:="hyy my name is shabin"
+// 	m:=make(map[rune]int)
+// 	for _,v:=range str{
+// 		m[v]++
+// 	}
+// 	for a,b:=range m{
+// 		fmt.Printf("%c:%d\n",a,b)
+// 	}
+// }
+
+// Frequency count of integers in slice
+// func main(){
+// 	array:=[]int{2,1,2,5,6,3,2,3,10,9,8,7,4,6,7,3,4,2,5,7,6,3,4,4,2,5,5,6}
+// 	m:=make(map[int]int)
+// 	for _,v:=range array{
+// 		m[v]++
+// 	}
+// 	fmt.Println(m)
+// }
+
+// Find first non-repeating character
+// func main(){
+// 	array:=[]int{1, 2, 3, 4, 3, 5, 6, 7}
+// 	m:=make(map[int]bool)
+// 	n:=make(map[int]int)
+// 	for _,v:=range array{
+// 		if m[v]{
+// 			fmt.Println("First repeating : ",v)
+// 		}
+// 		m[v]=true
+// 	}
+// 	for _,v:=range array{
+// 		n[v]++
+// 	}
+// 	for _,v:=range array{
+// 		if n[v]==1{
+// 			fmt.Println("First non-repeating :",v)
+// 			break
+// 		}
+// 	}
+// }
+
+// Find missing number in array
+// func main(){
+// 	array:=[]int{2,3,4,5}
+// 	n:=len(array)+1
+// 	sum:=0
+// 	for _,v:=range array{
+// 		sum+=v
+// 	}
+// 	exp:=n*(n+1)/2
+// 	miss:=exp-sum
+// 	fmt.Println(miss)
+// }
+
+// Two Sum problem
+// func main(){
+// 	array:=[]int{1,2,3,5,0}
+// 	target:=8
+// 	m:=make(map[int]int)
+// 	for i,n:=range array{
+// 		get:=target-n
+// 		if ind,fou:=m[get];fou{
+// 			fmt.Println(ind,i)
+// 			return
+// 		}
+// 		m[n]=i
+// 	}
+// 	fmt.Println("Nothing")
+// }
+
+// Merge two arrays
+// func main(){
+// 	a:=[]int{1,2,3}
+// 	b:=[]int{4,5,6}
+// 	merge:=append(a,b...)
+// 	fmt.Println(merge)
+// }
+
+//odd and even concurrently
+// func Odd(oddch chan bool,evench chan bool,wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for i:=1;i<=10;i+=2{
+// 		<-oddch
+// 		fmt.Println("odd :",i)
+// 		evench<-true
+// 	}
+// }
+// func Even(oddch chan bool,evench chan bool,wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for i:=2;i<=10;i+=2{
+// 		<-evench
+// 		fmt.Println("even :",i)
+// 		if i!=10{
+// 			oddch<-true
+// 		}
+// 	}
+// }
+// func main(){
+// 		oddch:=make(chan bool)
+// 		evench:=make(chan bool)
+
+// 		var wg sync.WaitGroup
+// 		wg.Add(2)
+// 		go Odd(oddch,evench,&wg)
+// 		go Even(oddch,evench,&wg)
+// 	oddch<-true
+// 		wg.Wait()
+// }
+
 func main(){
-	array:=[]int{2,3,4,1,5,7,8,6}
-	for i:=0;i<len(array);i++{
-		for j:=i+1;j<len(array);j++{
-			if array[i]>array[j]{
-				array[i],array[j]=array[j],array[i]
+	a:=[]int{1,2,3,6}
+	b:=[]int{2,3,4,5}
+
+	m:=make(map[int]int)
+	for _,v:=range a{
+		m[v]++
+	}
+	for _,v:=range b{
+		m[v]--
+	}
+	found:=false
+	small:=0
+	for i,n:=range m{
+		if n==0{
+			if !found||i<small{
+				small=i
+				found=true
 			}
 		}
 	}
-	fmt.Println(array)
+	if found{
+		fmt.Println(small)
+		return
+	}
+	for s,h:=range m{
+		if h>0{
+			fmt.Println(s)
+			return
+		}
+	}
 }
