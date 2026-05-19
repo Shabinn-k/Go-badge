@@ -233,3 +233,24 @@ import "fmt"
 // }
 
 // Sum of digits of a number
+// func main(){
+// 	result:=0
+// 	n:=10
+// 	for i:=1;i<=n;i++{
+// 		result+=i
+// 	}
+// 	fmt.Println(result)
+// }
+
+// Sort slice without built-in sort
+func main(){
+	array:=[]int{2,3,4,1,5,7,8,6}
+	for i:=0;i<len(array);i++{
+		for j:=i+1;j<len(array);j++{
+			if array[i]>array[j]{
+				array[i],array[j]=array[j],array[i]
+			}
+		}
+	}
+	fmt.Println(array)
+}
