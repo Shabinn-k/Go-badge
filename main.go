@@ -370,35 +370,57 @@ import (
 // 		wg.Wait()
 // }
 
-func main(){
-	a:=[]int{1,2,3,6}
-	b:=[]int{2,3,4,5}
+// func main(){
+// 	a:=[]int{1,2,3,6}
+// 	b:=[]int{2,3,4,5}
 
-	m:=make(map[int]int)
-	for _,v:=range a{
-		m[v]++
-	}
-	for _,v:=range b{
-		m[v]--
-	}
-	found:=false
-	small:=0
-	for i,n:=range m{
-		if n==0{
-			if !found||i<small{
-				small=i
-				found=true
-			}
-		}
-	}
-	if found{
-		fmt.Println(small)
-		return
-	}
-	for s,h:=range m{
-		if h>0{
-			fmt.Println(s)
-			return
-		}
-	}
+// 	m:=make(map[int]int)
+// 	for _,v:=range a{
+// 		m[v]++
+// 	}
+// 	for _,v:=range b{
+// 		m[v]--
+// 	}
+// 	found:=false
+// 	small:=0
+// 	for i,n:=range m{
+// 		if n==0{
+// 			if !found||i<small{
+// 				small=i
+// 				found=true
+// 			}
+// 		}
+// 	}
+// 	if found{
+// 		fmt.Println(small)
+// 		return
+// 	}
+// 	for s,h:=range m{
+// 		if h>0{
+// 			fmt.Println(s)
+// 			return
+// 		}
+// 	}
+// }
+
+
+// Intersection of arrays
+// func main(){
+// 	arr1:=[]int{1,2,3,4,5}
+// 	arr2:=[]int{6,7,2,2,8,9,1}
+// 	m:=make(map[int]bool)
+// 	res:=[]int{}
+// 	for _,v:=range arr1{
+// 		m[v]=true
+// 	}
+// 	for _,v:=range arr2{
+// 		if m[v]{
+// 			res=append(res,v)
+// 		}
+// 	}
+// 	fmt.Println(res)
+// }
+
+func main(){
+	fmt.Printf("asdfghjk")
 }

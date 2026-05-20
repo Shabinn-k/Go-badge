@@ -85,6 +85,3 @@ WHERE amount >
     FROM Orders o2
     WHERE o1.customer_id = o2.customer_id
 );
-
-
-
