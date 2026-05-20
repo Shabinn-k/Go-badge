@@ -9,6 +9,7 @@ func Queue() {
 	q = append(q, 100)
 	q = append(q, 200)
 	q = append(q, 300)
+	
 	q = append(q, 400)
 	fmt.Println(q)
 
