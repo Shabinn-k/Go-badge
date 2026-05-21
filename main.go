@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	// "sync"
 )
 
@@ -403,7 +404,6 @@ import (
 // 	}
 // }
 
-
 // Intersection of arrays
 // func main(){
 // 	arr1:=[]int{1,2,3,4,5}
@@ -420,7 +420,32 @@ import (
 // 	}
 // 	fmt.Println(res)
 // }
-
+func cat(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
+	defer wg.Done()
+	for i:=0;i<5;i++{
+		<-catch
+		fmt.Println("cat")
+		dogch<-true
+	}
+}
+func dog(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
+	defer wg.Done()
+	for i:=0;i<5;i++{
+		<-dogch
+		fmt.Println("dog")
+		if i<4{
+			catch<-true
+		}
+	}
+}
 func main(){
-	fmt.Printf("asdfghjk")
+	var wg sync.WaitGroup
+	dogch:=make(chan bool)
+	catch:=make(chan bool)
+
+	wg.Add(2)
+	go dog(catch,dogch,&wg)
+	go cat(catch,dogch,&wg)
+	catch<-true
+	wg.Wait()
 }
