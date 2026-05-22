@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-// "fmt"
-// "sync"
 
 // Print numbers from 1–100
 // func main(){
@@ -245,7 +243,7 @@ import "fmt"
 // 	fmt.Println(result)
 // }
 
-// Sort slice without built-in sort
+// Sort slice without 
 // func main(){
 // 	array:=[]int{2,3,4,1,5,7,8,6}
 // 	for i:=0;i<len(array);i++{

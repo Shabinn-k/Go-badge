@@ -6,9 +6,9 @@ var target = 9
 func TwoSum(nums []int, target int) []int {
 	m := make(map[int]int)
 	for i, num := range nums {
-		get := target - num
-		if ind, found := m[get]; found {
-			return []int{ind, i}
+		need := target - num
+		if j, found := m[need]; found {
+			return []int{j, i}
 		}
 		m[num] = i
 	}
