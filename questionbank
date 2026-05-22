@@ -1,0 +1,293 @@
+# 200 Go Backend Interview Questions
+
+## 🐹 CATEGORY 1 — Go Basics & Core Concepts (Q1–Q20)
+
+| # | Question | Level |
+|---|----------|-------|
+| 1 | What is the output of `var x int; fmt.Println(x)`? Why? | Beginner |
+| 2 | Explain the difference between `var x int` and `x := 0`. | Beginner |
+| 3 | What is a pointer in Go? Write code to swap two integers using pointers. | Beginner |
+| 4 | Explain `defer` with an example. In what order do multiple defers execute? | Beginner |
+| 5 | What is the difference between `panic` and `recover`? Write a recovery example. | Intermediate |
+| 6 | What are blank identifiers (`_`) and when would you use them? | Beginner |
+| 7 | Explain the difference between arrays and slices in Go. | Beginner |
+| 8 | What happens when you `append` to a slice beyond its capacity? | Intermediate |
+| 9 | How do maps work internally in Go? Are maps safe for concurrent use? | Intermediate |
+| 10 | What is the difference between `new()` and `make()`? | Beginner |
+| 11 | Predict: a slice is passed to a function and modified. Does the original change? | Intermediate |
+| 12 | Explain value vs reference semantics in Go with a struct example. | Intermediate |
+| 13 | What are variadic functions? Write a `sum(...int) int` function. | Beginner |
+| 14 | What is a closure in Go? Write a counter using closures. | Intermediate |
+| 15 | Explain `init()` functions. Can a package have multiple `init()` calls? | Intermediate |
+| 16 | What is the zero value of a struct, pointer, slice, map, and channel? | Beginner |
+| 17 | Explain type assertions and type switches with a practical example. | Intermediate |
+| 18 | What is the difference between `==` for structs vs slices? | Intermediate |
+| 19 | How does `for range` work on strings? What does each iteration yield? | Intermediate |
+| 20 | Write a function that reverses a string correctly, handling multi-byte UTF-8 characters. | Intermediate |
+
+---
+
+## 🔢 CATEGORY 2 — DSA in Go (Q21–Q40)
+
+| # | Question | Level |
+|---|----------|-------|
+| 21 | Implement a stack using a slice in Go with Push, Pop, and Peek methods. | Beginner |
+| 22 | Implement a queue using two stacks in Go. | Intermediate |
+| 23 | Find two numbers in a slice that sum to a target (Two Sum). | Beginner |
+| 24 | Find the length of the longest substring without repeating characters. | Intermediate |
+| 25 | Implement binary search on a sorted integer slice. | Beginner |
+| 26 | Write a function to check if a string is a palindrome. | Beginner |
+| 27 | Implement a linked list node with Insert and Delete methods. | Intermediate |
+| 28 | Detect a cycle in a linked list using Floyd's algorithm. | Intermediate |
+| 29 | Implement merge sort on a `[]int` in Go. | Intermediate |
+| 30 | Find the maximum subarray sum using Kadane's Algorithm. | Intermediate |
+| 31 | Given a `[]string`, group anagrams together. | Intermediate |
+| 32 | Implement a min-heap using Go's `container/heap` interface. | Advanced |
+| 33 | Write BFS and DFS traversal for a graph as an adjacency map. | Advanced |
+| 34 | Find the Kth largest element in an unsorted slice — most efficient approach. | Advanced |
+| 35 | Implement LRU Cache with O(1) get and put using map + doubly linked list. | Advanced |
+| 36 | Rotate a matrix 90 degrees in place. | Advanced |
+| 37 | Write an iterative in-order traversal of a binary tree. | Intermediate |
+| 38 | Count the number of islands in a 2D grid using DFS. | Advanced |
+| 39 | Implement a Trie (prefix tree) with Insert, Search, and StartsWith. | Advanced |
+| 40 | Find all permutations of a string using recursion. | Intermediate |
+
+---
+
+## 🔌 CATEGORY 3 — Interfaces & OOP in Go (Q41–Q60)
+
+| # | Question | Level |
+|---|----------|-------|
+| 41 | What is an interface in Go? How does it differ from Java/C# interfaces? | Beginner |
+| 42 | What is implicit interface satisfaction? Does Go use an `implements` keyword? | Beginner |
+| 43 | Define a `Shape` interface with `Area()` and `Perimeter()`. Implement Circle and Rectangle. | Beginner |
+| 44 | What is `interface{}`? When and why would you use it? | Intermediate |
+| 45 | What is `any` in Go 1.18+? How does it relate to `interface{}`? | Beginner |
+| 46 | Explain interface embedding. Build a `ReadWriter` from `Reader` and `Writer`. | Intermediate |
+| 47 | What happens when you call a method on a nil interface vs a nil concrete pointer? | Advanced |
+| 48 | Explain the difference between value receivers and pointer receivers on methods. | Intermediate |
+| 49 | Design a `Logger` interface. Write two implementations: ConsoleLogger and FileLogger. | Intermediate |
+| 50 | What is the `fmt.Stringer` interface? Implement it for a custom `User` struct. | Beginner |
+| 51 | Why are `io.Reader` and `io.Writer` considered Go's most important interfaces? | Intermediate |
+| 52 | Explain how the `error` type is just an interface in Go. | Beginner |
+| 53 | Implement custom error types with additional context using interfaces. | Intermediate |
+| 54 | What is `errors.As` and `errors.Is`? How do they work with wrapped errors? | Intermediate |
+| 55 | Design a `PaymentProcessor` interface. Implement Stripe and PayPal adapters. | Intermediate |
+| 56 | What is interface pollution? When should you NOT use interfaces? | Advanced |
+| 57 | How would you mock a database interface for unit testing? | Advanced |
+| 58 | Explain Go generics (1.18+) and how they relate to interfaces. Write a generic `Min[T]` function. | Advanced |
+| 59 | What is a type constraint in generics? Implement a generic Stack. | Advanced |
+| 60 | Design an `EventHandler` interface and implement a simple pub/sub system. | Advanced |
+
+---
+
+## ⚡ CATEGORY 4 — Goroutines & Concurrency (Q61–Q80)
+
+| # | Question | Level |
+|---|----------|-------|
+| 61 | What is a goroutine? How does it differ from an OS thread? | Beginner |
+| 62 | What is `sync.WaitGroup`? Rewrite a sequential loop to run concurrently using goroutines. | Beginner |
+| 63 | What is a channel in Go? Explain buffered vs unbuffered channels. | Beginner |
+| 64 | What is a deadlock? Write a simple code example that causes a deadlock. | Intermediate |
+| 65 | What is the `select` statement? Write an example with a timeout using `time.After`. | Intermediate |
+| 66 | Explain the Go memory model — what does "happens before" mean? | Advanced |
+| 67 | What is a race condition? Write code that has one, then fix it. | Intermediate |
+| 68 | What does `go run -race` do? How do you use the race detector? | Intermediate |
+| 69 | Implement a pipeline pattern: generator → transform → sink using channels. | Advanced |
+| 70 | Implement a fan-out / fan-in pattern in Go. | Advanced |
+| 71 | How do you cancel goroutines using `context.Context`? Write an example. | Advanced |
+| 72 | What is `context.WithTimeout` vs `context.WithDeadline` vs `context.WithCancel`? | Advanced |
+| 73 | Implement a worker pool that processes jobs from a channel using N goroutines. | Advanced |
+| 74 | What is a goroutine leak? Write code that leaks and then fix it. | Advanced |
+| 75 | Implement a rate limiter using a time.Ticker and channel. | Advanced |
+| 76 | What is the difference between `close(ch)` and setting a channel to `nil`? | Intermediate |
+| 77 | How do you implement a done channel pattern for graceful shutdown? | Advanced |
+| 78 | Write a concurrent merge sort using goroutines. When does parallelism actually help here? | Expert |
+| 79 | Implement a semaphore using a buffered channel. | Advanced |
+| 80 | What is `GOMAXPROCS`? How does it affect goroutine scheduling? | Advanced |
+
+---
+
+## 🔒 CATEGORY 5 — Mutex, Sync & Race Conditions (Q81–Q95)
+
+| # | Question | Level |
+|---|----------|-------|
+| 81 | What is `sync.Mutex`? Show a counter that is safe for concurrent use. | Beginner |
+| 82 | What is `sync.RWMutex`? When should you use it over `sync.Mutex`? | Intermediate |
+| 83 | What is `sync.Once`? Implement a thread-safe singleton using it. | Intermediate |
+| 84 | What is `sync.Map`? How does it differ from a map guarded by a mutex? | Advanced |
+| 85 | What is `sync.Cond`? When would you use it? | Advanced |
+| 86 | Write a thread-safe in-memory cache using `sync.RWMutex`. | Intermediate |
+| 87 | Explain what a deadlock is vs a livelock vs starvation. | Advanced |
+| 88 | Debug this code: two goroutines locking two mutexes in opposite order. Fix the deadlock. | Advanced |
+| 89 | What is an atomic operation? Show `sync/atomic` usage for a concurrent counter. | Intermediate |
+| 90 | Implement a bounded channel with backpressure using a semaphore pattern. | Advanced |
+| 91 | What is the happens-before relationship and why does it matter for correctness? | Expert |
+| 92 | Implement a read-heavy cache with TTL expiration in a concurrent-safe manner. | Advanced |
+| 93 | What is a memory barrier? How does Go handle it internally? | Expert |
+| 94 | Implement `sync.WaitGroup` from scratch using channels and atomics. | Expert |
+| 95 | When is it better to communicate via channels vs sharing memory with mutexes? | Advanced |
+
+---
+
+## 🌐 CATEGORY 6 — REST APIs with Gin Framework (Q96–Q115)
+
+| # | Question | Level |
+|---|----------|-------|
+| 96 | Set up a basic Gin server. Write a `GET /health` endpoint that returns `{"status":"ok"}`. | Beginner |
+| 97 | Write a `POST /users` endpoint that reads JSON from the request body and validates it. | Beginner |
+| 98 | How do you define route groups in Gin? Create `/api/v1/users` and `/api/v2/users` groups. | Beginner |
+| 99 | How does Gin handle path parameters and query parameters? Write examples of both. | Beginner |
+| 100 | What is middleware in Gin? Write a request logging middleware. | Intermediate |
+| 101 | Implement a middleware that adds a request ID to every request using `c.Set` and `c.Get`. | Intermediate |
+| 102 | Write a global error handler middleware in Gin that catches panics. | Intermediate |
+| 103 | Implement CORS middleware manually in Gin. | Intermediate |
+| 104 | How do you handle file uploads in Gin? Write an endpoint to accept a profile image. | Intermediate |
+| 105 | What is `c.ShouldBindJSON` vs `c.BindJSON` in Gin? What's the difference? | Intermediate |
+| 106 | Implement custom request validation using Go's `validator` tags with Gin. | Intermediate |
+| 107 | How do you write unit tests for Gin handlers using `httptest`? | Advanced |
+| 108 | Implement pagination in a `GET /products` endpoint with `page` and `limit` query params. | Intermediate |
+| 109 | Design a RESTful API for a blog system (posts, comments, users). Define all endpoints. | Advanced |
+| 110 | How do you handle graceful shutdown of a Gin server? | Advanced |
+| 111 | Implement a rate limiting middleware that allows 100 requests/minute per IP. | Advanced |
+| 112 | What is the difference between `gin.Default()` and `gin.New()`? | Beginner |
+| 113 | How do you serve static files and HTML templates with Gin? | Beginner |
+| 114 | Write a middleware that measures and logs the response time of each request. | Intermediate |
+| 115 | Implement streaming response in Gin using `c.Stream`. | Advanced |
+
+---
+
+## 🗄️ CATEGORY 7 — GORM & Database (Q116–Q130)
+
+| # | Question | Level |
+|---|----------|-------|
+| 116 | Set up GORM with PostgreSQL. Write a `User` model and auto-migrate it. | Beginner |
+| 117 | Perform CRUD operations (Create, Read, Update, Delete) on a `Product` model using GORM. | Beginner |
+| 118 | How does GORM handle associations? Implement a `User has many Posts` relationship. | Intermediate |
+| 119 | What is the difference between `Save`, `Update`, and `Updates` in GORM? | Intermediate |
+| 120 | How do you write raw SQL queries in GORM? When would you prefer raw SQL? | Intermediate |
+| 121 | What is soft delete in GORM? Implement it using `gorm.DeletedAt`. | Intermediate |
+| 122 | Implement a GORM scope to filter only active records. | Intermediate |
+| 123 | How do you handle transactions in GORM? Write a fund-transfer between two accounts. | Advanced |
+| 124 | Implement pagination with GORM using `.Offset()` and `.Limit()`. | Beginner |
+| 125 | How do you use GORM hooks (BeforeCreate, AfterUpdate)? Give a practical use case. | Intermediate |
+| 126 | What is N+1 query problem? How do you fix it using `Preload` in GORM? | Advanced |
+| 127 | How do you implement full-text search with GORM and PostgreSQL? | Advanced |
+| 128 | How do you handle database migrations in production safely? | Advanced |
+| 129 | What is connection pooling in GORM? How do you configure `MaxOpenConns` and `MaxIdleConns`? | Advanced |
+| 130 | Implement optimistic locking with a `version` column to prevent race conditions in GORM. | Expert |
+
+---
+
+## 🐘 CATEGORY 8 — PostgreSQL & SQL (Q131–Q155)
+
+| # | Question | Level |
+|---|----------|-------|
+| 131 | Write a query to get all users who have placed more than 3 orders. | Beginner |
+| 132 | Explain INNER JOIN vs LEFT JOIN vs FULL OUTER JOIN with examples. | Beginner |
+| 133 | Write a query using GROUP BY and HAVING to find products with average rating > 4. | Beginner |
+| 134 | What is a CTE (Common Table Expression)? Rewrite a subquery as a CTE. | Intermediate |
+| 135 | Write a recursive CTE to find all nodes in an org hierarchy under a manager. | Advanced |
+| 136 | What are window functions? Use `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` with examples. | Advanced |
+| 137 | Use `LAG()` and `LEAD()` to calculate day-over-day revenue change. | Advanced |
+| 138 | Write a query to find the second highest salary in an employees table — multiple approaches. | Intermediate |
+| 139 | What is `EXPLAIN ANALYZE` in PostgreSQL? How do you read the output? | Advanced |
+| 140 | What is an index in PostgreSQL? Explain B-tree vs Hash vs GIN indexes. | Intermediate |
+| 141 | When does PostgreSQL NOT use an index? List 4 common reasons. | Advanced |
+| 142 | What is a partial index? Write an example where it would improve performance. | Advanced |
+| 143 | Explain ACID properties with real-world PostgreSQL examples for each. | Intermediate |
+| 144 | What are PostgreSQL isolation levels? Explain read committed vs repeatable read vs serializable. | Advanced |
+| 145 | What is a deadlock in PostgreSQL? How do you detect and resolve it? | Advanced |
+| 146 | Design a schema for an e-commerce app (users, products, orders, order_items). | Intermediate |
+| 147 | Write a query using `JSONB` operators to query a JSON column in PostgreSQL. | Advanced |
+| 148 | What is `UPSERT`? Write an `INSERT ... ON CONFLICT DO UPDATE` example. | Intermediate |
+| 149 | Explain table partitioning in PostgreSQL. When would you use range vs list partitioning? | Expert |
+| 150 | What is `VACUUM` and `AUTOVACUUM` in PostgreSQL? Why do they matter? | Advanced |
+| 151 | Write a query that pivots rows to columns (using CASE WHEN or crosstab). | Advanced |
+| 152 | What are materialized views? How do they differ from regular views? | Intermediate |
+| 153 | Design a normalized schema for a multi-tenant SaaS application. | Expert |
+| 154 | Write a query to find duplicate rows and delete all but one. | Intermediate |
+| 155 | Explain the difference between `COUNT(*)`, `COUNT(col)`, and `COUNT(DISTINCT col)`. | Beginner |
+
+---
+
+## 🔐 CATEGORY 9 — JWT Auth, Middleware & Security (Q156–Q175)
+
+| # | Question | Level |
+|---|----------|-------|
+| 156 | What is JWT? Explain its structure: header, payload, signature. | Beginner |
+| 157 | Implement JWT token generation on login using `golang-jwt/jwt`. | Beginner |
+| 158 | Write a Gin middleware to validate and parse a JWT from the `Authorization` header. | Intermediate |
+| 159 | What is the difference between access tokens and refresh tokens? | Intermediate |
+| 160 | Implement a refresh token rotation flow: issue, use, and invalidate. | Advanced |
+| 161 | How do you store refresh tokens securely? Database vs Redis — trade-offs. | Advanced |
+| 162 | What are common JWT vulnerabilities? (alg:none attack, weak secrets, etc.) | Advanced |
+| 163 | Implement role-based access control (RBAC) middleware in Gin. | Advanced |
+| 164 | What is bcrypt? Implement password hashing and comparison for user login. | Intermediate |
+| 165 | What is CSRF? How would you prevent it in a Go API? | Intermediate |
+| 166 | What is SQL injection? Write a vulnerable query and then fix it using parameterized queries. | Intermediate |
+| 167 | Implement token blacklisting after logout using Redis. | Advanced |
+| 168 | What is OAuth2? How would you implement Google OAuth login in a Go backend? | Advanced |
+| 169 | How do you secure sensitive config (DB passwords, JWT secrets) in a Go app? | Intermediate |
+| 170 | Implement an API key authentication middleware in Gin. | Intermediate |
+| 171 | What is rate limiting for security (vs performance)? Implement per-user rate limiting. | Advanced |
+| 172 | Explain HTTPS, TLS handshake, and how to configure TLS in a Go server. | Advanced |
+| 173 | What are OWASP Top 10 vulnerabilities relevant to a Go REST API? | Advanced |
+| 174 | Implement request body size limiting middleware to prevent DoS attacks. | Intermediate |
+| 175 | How do you implement audit logging for sensitive operations in a Go API? | Advanced |
+
+---
+
+## ⚙️ CATEGORY 10 — System Design & Backend Patterns (Q176–Q200)
+
+| # | Question | Level |
+|---|----------|-------|
+| 176 | Implement a worker pool that processes jobs with configurable concurrency in Go. | Advanced |
+| 177 | Design a caching layer using Redis with Go. Implement get-set-delete operations. | Advanced |
+| 178 | Implement cache-aside pattern: check cache first, fall back to DB, then populate cache. | Advanced |
+| 179 | What is a message queue? Implement a simple job queue using channels and goroutines. | Intermediate |
+| 180 | Design a URL shortener backend (schema + API + redirect logic). | Advanced |
+| 181 | Implement cursor-based pagination vs offset pagination. When is each better? | Advanced |
+| 182 | Design a notification system that supports email, SMS, and push — using strategy pattern. | Advanced |
+| 183 | What is the circuit breaker pattern? Implement a simple one in Go. | Expert |
+| 184 | Implement an exponential backoff retry mechanism for external API calls. | Advanced |
+| 185 | Design a multi-layered API rate limiter: per IP, per user, and per endpoint. | Expert |
+| 186 | What is the repository pattern? Implement it to decouple GORM from your service layer. | Advanced |
+| 187 | What is the dependency injection pattern? Refactor a Gin handler to use DI. | Advanced |
+| 188 | What is graceful shutdown? Implement it for a Gin server with in-flight request draining. | Advanced |
+| 189 | Design a file upload service with chunked uploads and resumable support. | Expert |
+| 190 | Implement a distributed lock using Redis `SET NX` from a Go service. | Expert |
+| 191 | What is event sourcing? How does it differ from a traditional CRUD approach? | Expert |
+| 192 | Design a webhook delivery system with retries and failure tracking. | Expert |
+| 193 | How would you implement idempotency in a payment API? | Expert |
+| 194 | What is the saga pattern for distributed transactions? Give a Go-based example. | Expert |
+| 195 | Implement health check endpoints that verify DB, Redis, and external services. | Intermediate |
+| 196 | How do you structure a large Go project? Explain clean architecture layers. | Advanced |
+| 197 | Design a real-time leaderboard using Redis sorted sets from a Go backend. | Advanced |
+| 198 | Implement structured logging using `zerolog` or `zap` with request context. | Intermediate |
+| 199 | How do you profile a Go application for CPU and memory bottlenecks? | Advanced |
+| 200 | Design the backend for a ride-sharing app: drivers, riders, matching, and live location. | Expert |
+
+---
+
+## 📊 Quick Stats
+
+| Level | Count |
+|-------|-------|
+| Beginner | 40 |
+| Intermediate | 72 |
+| Advanced | 68 |
+| Expert | 20 |
+| **Total** | **200** |
+
+---
+
+## 💡 How to use this list
+
+1. Start from Q1 — go in order, don't skip
+2. Write actual code for every coding question
+3. For theory questions, write your answer in plain English first
+4. Come back to this chat and say **"Q[number]"** — I'll quiz you like a real interviewer
+5. Example: type `Q35` and I'll give you the LRU Cache problem with full interview simulation
+
+Good luck. 

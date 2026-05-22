@@ -1,10 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-	// "sync"
-)
+import "fmt"
+
+// "fmt"
+// "sync"
 
 // Print numbers from 1–100
 // func main(){
@@ -420,32 +419,137 @@ import (
 // 	}
 // 	fmt.Println(res)
 // }
-func cat(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
-	defer wg.Done()
-	for i:=0;i<5;i++{
-		<-catch
-		fmt.Println("cat")
-		dogch<-true
-	}
-}
-func dog(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
-	defer wg.Done()
-	for i:=0;i<5;i++{
-		<-dogch
-		fmt.Println("dog")
-		if i<4{
-			catch<-true
-		}
-	}
-}
-func main(){
-	var wg sync.WaitGroup
-	dogch:=make(chan bool)
-	catch:=make(chan bool)
+// func cat(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for i:=0;i<5;i++{
+// 		<-catch
+// 		fmt.Println("cat")
+// 		dogch<-true
+// 	}
+// }
+// func dog(catch chan bool,dogch chan bool,wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for i:=0;i<5;i++{
+// 		<-dogch
+// 		fmt.Println("dog")
+// 		if i<4{
+// 			catch<-true
+// 		}
+// 	}
+// }
+// func main(){
+// 	var wg sync.WaitGroup
+// 	dogch:=make(chan bool)
+// 	catch:=make(chan bool)
 
-	wg.Add(2)
-	go dog(catch,dogch,&wg)
-	go cat(catch,dogch,&wg)
-	catch<-true
-	wg.Wait()
+// 	wg.Add(2)
+// 	go dog(catch,dogch,&wg)
+// 	go cat(catch,dogch,&wg)
+// 	catch<-true
+// 	wg.Wait()
+// }
+
+// func main(){
+// 	str:="hello world"
+// 	result:=""
+// 	for _,ch:=range str{
+// 		if ch!='l'{
+// 			result+=string(ch)
+// 		}
+// 	}
+// 	fmt.Print(result)
+// }
+
+//rw mutex
+// var (
+// 	count int
+// 	mu sync.RWMutex
+// )
+// func read(id int){
+// 	mu.RLock()
+// 	fmt.Println("reader ",id ,"Reads ",count)
+// 	time.Sleep(time.Second)
+// 	mu.RUnlock()
+// }
+// func Write(id int){
+// 	mu.Lock()
+// 	count++
+// 	fmt.Println("Writer ",id ,"Writes ",count)
+// 	time.Sleep(time.Second)
+// 	mu.Unlock()
+// }
+// func main(){
+// 	go read(1)
+// 	go read(2)
+// 	go Write(1)
+// 	go read(3)
+// 	time.Sleep(3 * time.Second)
+// }
+
+//worker pool
+// func worker(id int , job chan int, wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for job:=range job{
+// 		fmt.Println("Worker :",id,"Doing job :",job)
+// 	}
+// }
+// func main(){
+// 	job:=make(chan int)
+// 	var wg sync.WaitGroup
+// 	for i:=1;i<=3;i++{
+// 		wg.Add(1)
+// 		go worker(i,job,&wg)
+// 	}
+// 	for j:=0;j<100;j++{
+// 		job<-j
+// 	}
+// 	close(job)
+// 	wg.Wait()
+// }
+
+//odd and even synchronised
+// var array=[]int{1,2,3,4,5,6,7,8,9,10}
+// func odd(oddch chan bool,evench chan bool,wg *sync.WaitGroup){
+// 	 defer wg.Done()
+// 	 for i:=0;i<len(array);i++{
+// 		if array[i]%2!=0{
+// 			<-oddch
+// 			fmt.Println(array[i])
+// 			evench<-true
+// 		}
+// 	 }
+// }
+// func even(oddch chan bool,evench chan bool,wg *sync.WaitGroup){
+// 	 defer wg.Done()
+// 	 for i:=0;i<len(array);i++{
+// 		if array[i]%2==0{
+// 			<-evench
+// 			fmt.Println(array[i])
+// 			if i!=len(array)-1{
+// 				oddch<-true
+// 			}
+// 		}
+// 	 }
+// }
+// func main(){
+// 	oddch:=make(chan bool)
+// 	evench:=make(chan bool)
+// 	var wg  sync.WaitGroup
+// 	wg.Add(2)
+// 	go odd(oddch,evench,&wg)
+// 	go even(oddch,evench,&wg)
+// 	oddch<-true
+// 	wg.Wait()
+// }
+
+func main(){
+	a:=10
+	b:=20 
+	p1:=&a
+	p2:=&b
+	t:=*p1
+	*p1=*p2
+	*p2=t
+	fmt.Println(a)
+	fmt.Println(b)
 }
